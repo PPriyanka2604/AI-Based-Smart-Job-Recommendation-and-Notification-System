@@ -1,0 +1,68 @@
+# Implementation Plan - AI Smart Job & Resume System
+
+This project aims to build an end-to-end job seeker assistant that parses resumes, scores them for ATS compatibility, suggests improvements using a local LLM, and matches candidates with live job postings from India using RAG.
+
+## Proposed Changes
+
+### Project Structure
+- `app.py`: Main Streamlit application.
+- `src/`:
+    - `parser.py`: Resume parsing logic (spaCy, Regex).
+    - `llm.py`: Ollama integration for resume feedback and role detection.
+    - `job_service.py`: Adzuna India API client and fraud filtering.
+    - `rag_matcher.py`: FAISS and Sentence-Transformers for semantic matching.
+    - `database.py`: SQLite storage for user history and notifications.
+    - `notifier.py`: SMTP and APScheduler for email alerts.
+- `requirements.txt`: Python dependencies.
+- `.env`: API keys and configuration.
+
+### [Component Name]
+
+#### [NEW] [requirements.txt](file:///c:/Users/Priyanka/OneDrive/Desktop/antigravity/requirements.txt)
+- `streamlit`
+- `spacy`
+- `nltk`
+- `requests`
+- `sentence-transformers`
+- `faiss-cpu`
+- `ollama`
+- `sqlite3`
+- `pandas`
+- `pyyaml`
+- `apscheduler`
+- `python-dotenv`
+- `pdfminer.six` (for PDF parsing)
+- `python-docx` (for Word documents)
+
+#### [NEW] [app.py](file:///c:/Users/Priyanka/OneDrive/Desktop/antigravity/app.py)
+- Streamlit layout with sidebar for configuration.
+- Multiple tabs: "Resume Analysis", "Job Discovery", "Settings".
+- Premium aesthetics using custom CSS.
+
+#### [NEW] [src/parser.py](file:///c:/Users/Priyanka/OneDrive/Desktop/antigravity/src/parser.py)
+- PDF/DOCX to text extraction.
+- Named Entity Recognition (NER) for skills, education, and experience.
+
+#### [NEW] [src/llm.py](file:///c:/Users/Priyanka/OneDrive/Desktop/antigravity/src/llm.py)
+- Integration with `ollama` Python library.
+- Focused prompts for resume improvement and role detection.
+
+#### [NEW] [src/job_service.py](file:///c:/Users/Priyanka/OneDrive/Desktop/antigravity/src/job_service.py)
+- Fetching jobs from Adzuna India API.
+- Rule-based fraud detection (e.g., suspicious keywords, unrealistic salaries).
+
+#### [NEW] [src/rag_matcher.py](file:///c:/Users/Priyanka/OneDrive/Desktop/antigravity/src/rag_matcher.py)
+- Create vector store from job descriptions.
+- Semantic search using resume content as query.
+
+## Verification Plan
+
+### Automated Tests
+- Test cases for resume parsing with sample documents.
+- Mock API responses for Adzuna service.
+- Similarity threshold verification for RAG.
+
+### Manual Verification
+- Uploading various resume formats (PDF, DOCX).
+- Checking LLM-generated feedback for relevance.
+- Verifying email notifications.

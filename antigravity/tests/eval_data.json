@@ -1,0 +1,51 @@
+{
+  "resumes": [
+    {
+      "id": "R1",
+      "name": "Mid-Level Developer",
+      "text": "## EXPERIENCE\nSenior Software Engineer - Google (Jan 2021 - Dec 2022)\nWorked on distributed systems and cloud infrastructure.\n\nSoftware Engineer - Microsoft (Jan 2019 - Dec 2020)\nBuilt microservices with Python and FastAPI.",
+      "expected_months": 48,
+      "expected_level": "Mid-Level"
+    },
+    {
+      "id": "R2",
+      "name": "Junior Developer",
+      "text": "## EXPERIENCE\nIntern - Amazon (6 months)\nBackend Intern - Flipkart (3 months)\nSoftware Trainee - TCS (Jun 2023 - Present)",
+      "expected_months": 15, 
+      "expected_level": "Junior"
+    },
+    {
+      "id": "R3",
+      "name": "Entry-Level",
+      "text": "## EXPERIENCE\nNo professional work experience. Completed university projects in 2024.",
+      "expected_months": 0,
+      "expected_level": "Entry-Level"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "J1",
+      "title": "Senior Cloud Engineer",
+      "company": "TechCorp",
+      "description": "Looking for someone with 5+ years of experience in distributed systems and cloud.",
+      "is_relevant_to": ["R1"],
+      "is_scam": false
+    },
+    {
+      "id": "J2",
+      "title": "Junior Python Developer",
+      "company": "StartupX",
+      "description": "0-2 years of experience. Python, FastAPI, and Git required.",
+      "is_relevant_to": ["R2"],
+      "is_scam": false
+    },
+    {
+      "id": "J3",
+      "title": "Work from Home - Earn 50k Today!",
+      "company": "QuickCash",
+      "description": "No experience needed. Pay registration fee for your laptop. WhatsApp 9999999999 now!",
+      "is_relevant_to": [],
+      "is_scam": true
+    }
+  ]
+}

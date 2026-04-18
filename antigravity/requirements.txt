@@ -1,0 +1,13 @@
+apify-client
+requests
+requests
+sentence-transformers
+faiss-cpu
+ollama
+pandas
+pyyaml
+apscheduler
+python-dotenv
+pdfminer.six
+python-docx
+streamlit
